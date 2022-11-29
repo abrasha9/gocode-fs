@@ -1,0 +1,46 @@
+.title {
+  font-size: 50px;
+  color: blueviolet;  
+  margin-top: auto;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#prof   {
+    display: block;
+    width: 60%;
+    border-radius: 300px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+#boot {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+#fullst {
+    display: block;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p   {
+    font-size: 30px;
+}
+
+a {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}

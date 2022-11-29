@@ -1,0 +1,24 @@
+#btn1{
+    color: aqua;
+    background-color: brown;
+    text-size-adjust: 100px;
+    position: absolute;
+    top: 100;
+    left: 100;
+
+} 
+#btn1:hover{
+    background-color: black;
+    position:absolute()
+    
+
+}
+
+p{
+    color: brown;
+    font-size: 20px;
+}
+#p1{
+    font-size: 10px;
+    
+}

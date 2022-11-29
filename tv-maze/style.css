@@ -1,0 +1,37 @@
+
+.logo-logreg{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-items: flex-end;
+    justify-content: flex-start;
+    background-color: #333;
+    padding: 0px 20px;
+    color: white;
+ 
+}
+.logo-logreg h3{
+    justify-self: flex-end;
+}
+input{
+    justify-self: center;
+    padding-left: 30px;
+    border-radius: 20px;
+}
+.navbar{
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+    background-color:#3c948b;
+    padding-left: 20PX;
+    color: white;
+}
+.navbar h3{
+    padding-left: 30px;
+    height: 100%;
+    padding:20px 0px 20px 0px;
+    margin: 0px 5px;
+}
+.navbar h3:hover{
+    background-color: #333;
+}

@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+}
+
+.container{
+    border: 2px solid blue;
+    margin: 20px 5px;
+}
+
+@media screen and (max-width: 480px) {
+   body{
+    flex-direction: column
+   } 
+   .container{
+    border: 2px solid rgba(187, 172, 35, 0.251);
+    margin: 10px 20px 10px 20px;
+}
+
+}

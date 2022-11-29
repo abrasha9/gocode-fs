@@ -1,0 +1,25 @@
+my birthyear is 
+main.js:4 1984
+main.js:5 substract 200
+main.js:6 1784
+main.js:7 add 100
+main.js:8 2084
+main.js:9 multiply by 3
+main.js:10 5952
+main.js:11 divide by 2
+main.js:12 992
+main.js:17 israel abramovitch
+main.js:21 my net salary is:
+main.js:22 21000
+main.js:28 see no remainder 12/4
+main.js:29 0
+main.js:31 see  remainder 12/5
+main.js:32 2
+main.js:34 see  exponent of 3^3
+main.js:35 27
+main.js:38 10
+main.js:39 plus 1
+main.js:41 11
+main.js:42 minus 1
+main.js:44 10
+main.js:51 first is:  5 second is:  4  together is:  9

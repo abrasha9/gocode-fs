@@ -1,0 +1,9 @@
+th {
+    background-color: aquamarine;
+
+}
+
+.bg {
+    visibility: visible;
+    image-orientation: flip;
+}
