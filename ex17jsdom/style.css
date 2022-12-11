@@ -1,0 +1,35 @@
+h1 {
+    color: blue;
+    font-size: 50px;
+    text-align: center;
+}
+
+p{
+    font-weight: 30px;
+}
+
+.btn{
+    padding: 20px;
+}
+
+
+.divcir{
+    display: flex;
+    flex-direction: row;
+}
+.circle{
+    margin: 20px;
+    background-color: rgb(204, 47, 73);
+    width: 40px;
+    height: 40px;
+    border-radius: 60%;
+}
+input{
+    width: 400px;
+}
+
+.mouseover{
+    width : 1200px;
+    height: 500px;
+    background-color: aqua;
+}
