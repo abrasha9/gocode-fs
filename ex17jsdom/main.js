@@ -1,38 +1,37 @@
-<<<<<<< HEAD
-// const newbtn = document.querySelectorAll('circle');
-// console.log(newbtn);
-// // // newbtn.addEventListener('click',function(event)){
-// // //     // console.log(event);
-// // //     element.style.backgroundcolor = blue;
-// // // }
+//ex1
 
 const inpalert = document.querySelector('.inptext');
 const showbtn = document.querySelector('.showbtn');
-showbtn.onclick = function(){
+showbtn.addEventListener('click',function(){
     alert(inpalert.value);
-}
+})
 
+
+//ex2
 
 const mouseoverxy = document.querySelector('.mouseover');
-let x = mouseoverxy.getBoundingClientRect()
-mouseoverxy.addEventListener('mouseover', function(event){
-    console.log("mouse x position is: "+event.offsetX);
-    console.log("mouse y position is: "+event.offsetY);
+const xpos = document.querySelector('.xp');
+const ypos = document.querySelector('.yp');
+const posdiv = document.querySelector('.xydiv');
+mouseoverxy.addEventListener('mousemove', function(event){
+    xpos.innerHTML = event.offsetX;
+    ypos.innerHTML = event.offsetY;
+    posdiv.style.top = (event.offsetY+200) +'px';
+    posdiv.style.left = (event.offsetX+10) +'px';
+
 
 })
 
-const inpurl = document.querySelector('.inpimgurl');
-const imgfromurl = document.querySelector('.showimg');
-imgfromurl.innerHTML.src = 'https://www.celladorales.com/wp-content/uploads/2016/12/ShippingBox_sq.jpg';
+//ex3
 
-=======
-let inpurl = document.querySelector("input");
-let imgshow = document.querySelector('img');
-console.log(inpurl);
-let btnshow = document.querySelector(".showbtn");
+let inpurl = document.querySelector(".input2");
+let imgshow = document.querySelector('.img2');
+let btnshow = document.querySelector(".showimgbtn");
 btnshow.addEventListener('click',function(){
   imgshow.src = inpurl.value;  
 })
+
+//ex4
 
 let arr = [1,2,3,4,5,6,7];
 let arrbox = document.querySelector('.arrayp');
@@ -40,17 +39,27 @@ let btnremove = document.querySelector('.removearr');
 arrbox.innerHTML = arr;
 btnremove.addEventListener('click',function(){
     arr.pop();
-    console.log(arr);
     arrbox.innerHTML = arr;
 })
 
+//ex5
+
 let colorbtn = document.querySelectorAll('.colorbtn');
-console.log(colorbtn.innerHTML);
-let colorbg = document.querySelector('div');
+let colorbg = document.querySelector('.colorbg');
 console.log(colorbg);
 colorbtn.forEach((element) =>
 element.addEventListener('click', function(){
     colorbg.style.background = element.innerHTML;
 }))
->>>>>>> c5f86879f15e5e4bd286e2820bb877d6cb802060
+
+//ex6
+
+let colorArr = ['black', 'red', 'yellow','blue','green'];
+let colorbox = document.querySelector('.colorinterval');
+setInterval(colorize,2000);
+function colorize(){
+    colorbox.style.background = colorArr[(Math.round((Math.random()*6))-1)];
+    console.log(colorbox.style.background);
+}
+
 
