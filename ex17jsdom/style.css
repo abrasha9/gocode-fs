@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 h1 {
     color: blue;
     font-size: 50px;
@@ -32,4 +33,22 @@ input{
     width : 1200px;
     height: 500px;
     background-color: aqua;
+=======
+button{
+    width: 80px;
+    height: 20px;
+}
+
+img{
+    width: 600px;
+    height: 600px;
+    background-color: beige;
+    font-size: 40px;
+}
+
+.colorbg {
+    width: 100%;
+    height: 300px;
+    background-color: grey;
+>>>>>>> c5f86879f15e5e4bd286e2820bb877d6cb802060
 }
