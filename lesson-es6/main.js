@@ -1,25 +1,25 @@
 //Use destructuring to make this code cleaner
-git
+
 function detectCollision(objects,{x:px,y:py}) {
     for (let i = 0; i < objects.length; i++) {
       let object = objects[i];
-      const {x,y,width,height} = objects[i];
+      const {x,y,width:w,height:h} = objects[i];
       if (
         px >= x &&
-        px <= x + width &&
+        px <= x + w &&
         py >= y &&
-        py <= y + height
-      ){
-      return object;}
+        py <= y + h
+      )
+      return object;
     }
   }
-itit
+
   const myObjects = [
     { x: 10, y: 20, width: 30, height: 30 },
     { x: -40, y: 20, width: 30, height: 30 },
     { x: 0, y: 0, width: 10, height: 5 },
   ];
 
-  const point =  { x:10, y:20};
+  const point =  { x:0, y:0};
   
   console.log(detectCollision(myObjects,point));
