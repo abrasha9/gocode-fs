@@ -13,7 +13,7 @@ function detectCollision(objects,{x:px,y:py}) {
       return object;}
     }
   }
-itit
+
   const myObjects = [
     { x: 10, y: 20, width: 30, height: 30 },
     { x: -40, y: 20, width: 30, height: 30 },
