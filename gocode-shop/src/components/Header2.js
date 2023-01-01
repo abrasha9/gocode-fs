@@ -3,17 +3,17 @@ import FilterBy from "./FilterBy";
 import SortBy from "./SortBy";
 import './Header2.css';
 
-const  Header2 = () => {
+const  Header2 = ({setProdFilter,categories} ) => {
     
     return (
-        <div>    
+    <div>    
      <nav className="product-filter">
       <h1>Jackets2</h1>
-      <FilterBy></FilterBy>
+      <FilterBy setProdFilter={setProdFilter} categories={categories}></FilterBy>
       <SortBy></SortBy>
-    </nav>
+     </nav>
 
-        </div>
+   </div>
     )
 }
 

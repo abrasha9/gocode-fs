@@ -9,7 +9,6 @@ const SortBy = () =>{
         <div className="sort">
         <div className="collection-sort">
         <label>{labelName}</label>
-
            <select>
             {options.map( (option2,index) => <option key={index} value="/">{option2}</option>)}
            </select> 
