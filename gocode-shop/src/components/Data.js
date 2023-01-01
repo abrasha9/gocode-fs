@@ -1,4 +1,28 @@
-export const prodArr = [
+
+
+import React from 'react'
+import Spinner from './Spinner'
+const ProdArr = () => {
+  return (
+    <div>
+      <Spinner></Spinner>
+      <Spinner></Spinner>
+      <Spinner></Spinner>
+      <Spinner></Spinner>
+      <Spinner></Spinner>
+      <Spinner></Spinner>
+    </div>
+  )
+}
+
+export default ProdArr;
+
+
+// export const prodArr = 
+  
+  
+  
+  /*
   {
     id: 1,
     title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -8,7 +32,8 @@ export const prodArr = [
     category: "men's clothing",
     image: "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
     rating: { rate: 3.9, count: 120 },
-  },
+  }]
+  
   {
     id: 2,
     title: "Mens Casual Premium Slim Fit T-Shirts ",
@@ -206,7 +231,7 @@ export const prodArr = [
     rating: { rate: 3.6, count: 145 },
   },
 ];
-
+*/
 // const fakeProd = async function(){
 //     try{
 //       const response = await fetch('https://fakestoreapi.com/products');

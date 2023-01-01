@@ -1,24 +1,20 @@
-import React, {useState} from 'react';
+import React, {useContext} from 'react';
 import Product from './Product';
 import './Products.css';
+import { MyContext } from '../MyContext';
 
 
-
-
-const Products = ({data}) => {
-  
+const Products = () => {
+    const dataFromContext = useContext(MyContext);
     return(
-        
         <section className="products">
-        {data.map((prop) => 
+        {dataFromContext.prodFilter.map((prop) => 
         <Product    
         key={prop.id}
         title={prop.title} 
         Image={prop.image} 
         Price={prop.price}
         />)}
-         
-
         </section>
     )
 }
