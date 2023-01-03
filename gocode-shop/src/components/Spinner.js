@@ -4,9 +4,9 @@ import './spinner.css';
 const Spinner = () => {
   return (
     <div>
-        <main class="spinner-examples">
-        <div class="example">
-        <span class="smooth spinner" />
+        <main className="spinner-examples">
+        <div className="example">
+        <span className="smooth spinner"/>
     </div>
     </main>
     </div>

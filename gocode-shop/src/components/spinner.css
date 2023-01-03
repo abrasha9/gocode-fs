@@ -4,21 +4,22 @@ html, body {
   }
   
   body {
-    background: black;
+    background: rgb(255, 255, 255);
     background-size: 100% auto;
     font-family: sans-serif;
   }
   
   .spinner-examples {
     display: grid;
+    background-color: black;
     grid-template-columns: repeat(2, 1fr);
-    padding: 2rem;
+    padding: 7rem;
     grid-gap: 1rem;
   }
   
   .example {
     display: block;
-    height: 200px;
+    height: 20px;
     position: relative;
     letter-spacing: 0.5px;
   }
@@ -35,8 +36,8 @@ html, body {
   .spinner::after {
     content: '';
     box-sizing: border-box;
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
     position: absolute;
     top: calc(50% - 20px);
     left: calc(50% - 20px);

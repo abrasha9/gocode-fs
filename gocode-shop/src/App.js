@@ -12,6 +12,7 @@ import {MyContext} from './MyContext';
 const App = () => {
   const [prodFilter, setProdFilter] = useState([]);
   const [prodCat, setprodcat] = useState([])
+  const [isLoading, setIsloading] = useState(true)
 
   const getProducts = async function () {
     try {
@@ -29,14 +30,19 @@ const App = () => {
     getProducts();
   },[])
  
+  useEffect( ()=>{
+  if (prodFilter.length > 0){
+  setIsloading(false);
+  }  
+  },[prodFilter])
 
   const categories = prodCat.map(p => p.category).filter((value, index, array) => array.indexOf(value)===index);
   categories.unshift('ALL');
   
   return (
-    <MyContext.Provider value = {{setProdFilter,categories,prodFilter,prodCat}}>
+    <MyContext.Provider value = {{setProdFilter,categories,prodFilter,prodCat,isLoading,setIsloading}}>
     <div className="App2">  
-      <Header2/>;
+      <Header2/>
       <Products/> 
     </div>
     </MyContext.Provider>

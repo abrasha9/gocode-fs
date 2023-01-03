@@ -1,28 +1,19 @@
+import React from "react";
+import Spinner from "./Spinner";
 
-
-import React from 'react'
-import Spinner from './Spinner'
 const ProdArr = () => {
   return (
     <div>
       <Spinner></Spinner>
-      <Spinner></Spinner>
-      <Spinner></Spinner>
-      <Spinner></Spinner>
-      <Spinner></Spinner>
-      <Spinner></Spinner>
     </div>
-  )
-}
+  );
+};
 
 export default ProdArr;
 
+// export const prodArr =
 
-// export const prodArr = 
-  
-  
-  
-  /*
+/*
   {
     id: 1,
     title: "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -232,16 +223,3 @@ export default ProdArr;
   },
 ];
 */
-// const fakeProd = async function(){
-//     try{
-//       const response = await fetch('https://fakestoreapi.com/products');
-//       const answer = await response.json();
-//       return answer;
-//     }
-//     catch(error){
-//       console.log(error);
-//       console.log('error');
-//     }
-//   }
-//   console.log(fakeProd());
-//   console.log('fdfd');
