@@ -1,0 +1,9 @@
+.cartbox {
+    position: absolute;
+    background: yellow;
+    width: 250px;
+    height: fit-content;
+    right: 0px;
+
+}
+

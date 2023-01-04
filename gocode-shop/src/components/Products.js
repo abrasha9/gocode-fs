@@ -8,6 +8,7 @@ import ProdArr from './Data';
 
 const Products = () => {
     const dataFromContext = useContext(MyContext);
+
     return(
         <section className="products">
         {dataFromContext.isLoading &&

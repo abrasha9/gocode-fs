@@ -2,17 +2,17 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import Header2 from './components/Header2';
 import Products from './components/Products';
-// import ProdArr from './components/Data';
+import Cart from './components/Cart'
 import {MyContext} from './MyContext';
-
 
 
 
 
 const App = () => {
   const [prodFilter, setProdFilter] = useState([]);
-  const [prodCat, setprodcat] = useState([])
-  const [isLoading, setIsloading] = useState(true)
+  const [prodCat, setprodcat] = useState([]);
+  const [isLoading, setIsloading] = useState(true);
+  const [cartList, setCartList] = useState([]);
 
   const getProducts = async function () {
     try {
@@ -40,9 +40,10 @@ const App = () => {
   categories.unshift('ALL');
   
   return (
-    <MyContext.Provider value = {{setProdFilter,categories,prodFilter,prodCat,isLoading,setIsloading}}>
+    <MyContext.Provider value = {{setProdFilter,categories,prodFilter,prodCat,isLoading,setIsloading,cartList,setCartList}}>
     <div className="App2">  
       <Header2/>
+      <Cart/>
       <Products/> 
     </div>
     </MyContext.Provider>
