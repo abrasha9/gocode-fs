@@ -46,7 +46,7 @@ let flag;
         <div className="product-info">
           <h5>{props.title}</h5>
           <h6>{props.Price}</h6>
-          <button onClick={addToCart}>add to cart</button>
+          <button className="add" onClick={addToCart}>add to cart</button>
         </div>
       </div>
     )
