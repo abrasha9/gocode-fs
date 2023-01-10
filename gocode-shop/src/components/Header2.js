@@ -2,6 +2,8 @@ import React from "react";
 import FilterBy from "./FilterBy";
 import SortBy from "./SortBy";
 import './Header2.css';
+import Cart from './Cart'
+
 
 const  Header2 =  () => {
     
@@ -11,6 +13,7 @@ const  Header2 =  () => {
       <h1>Jackets2</h1>
       <FilterBy></FilterBy>
       <SortBy></SortBy>
+      <Cart/>
      </nav>
 
    </div>

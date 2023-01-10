@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import Header2 from './components/Header2';
 import Products from './components/Products';
-import Cart from './components/Cart'
+import ToggleButton from './components/ToggleButton';
 import {MyContext} from './MyContext';
 
 
@@ -13,6 +13,7 @@ const App = () => {
   const [prodCat, setprodcat] = useState([]);
   const [isLoading, setIsloading] = useState(true);
   const [cartList, setCartList] = useState([]);
+  const [toggleText, setToggleText] = useState('dissapear!!');
 
   const getProducts = async function () {
     try {
@@ -31,9 +32,16 @@ const App = () => {
   },[])
  
   useEffect( ()=>{
+    if (toggleText === 'hide me!!'){
+      console.log('text visible');
+    } else {
+      console.log('text hidden');
+    }
+  },[toggleText])
+
+  useEffect( ()=>{
   if (prodFilter.length > 0){
   setIsloading(false);
-  console.log(`this is prod list ${prodCat}`);
   }  
   },[prodFilter])
 
@@ -41,10 +49,10 @@ const App = () => {
   categories.unshift('ALL');
   
   return (
-    <MyContext.Provider value = {{setProdFilter,categories,prodFilter,prodCat,isLoading,setIsloading,cartList,setCartList}}>
+    <MyContext.Provider value = {{setProdFilter,categories,prodFilter,prodCat,isLoading,setIsloading,cartList,setCartList,setToggleText,toggleText}}>
     <div className="App2">  
+      <ToggleButton/>
       <Header2/>
-      <Cart/>
       <Products/> 
     </div>
     </MyContext.Provider>

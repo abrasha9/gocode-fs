@@ -1,32 +1,26 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import './Product.css';
 import { MyContext } from '../MyContext';
-import { useEffect } from 'react';
+
 
 
 const Product = (props) => {
-let flag;
-  useEffect(()=>{
-    flag =0;
-  },[])
 
   const dataFromContext = useContext(MyContext);
+  const [newInCart, setNewInCart] = useState();
+
+  useEffect( ()=>{
+  if (newInCart !== undefined){
+  console.log(`the product - ${newInCart} - added to cart`); 
+  }  
+  },[newInCart])
 
   const addToCart = () =>{
-    const prodArray = {id:props.id, name:props.title, price:props.Price, amount:'1'};
+    const prodArray = {id:props.id, Image:props.Image, name:props.title, price:props.Price, amount:'1'};
     let Check = dataFromContext.cartList.find((el) => el.id === prodArray.id);
-   
+    setNewInCart(props.title);
     if (Check=== undefined){
-      if (flag === 0 && dataFromContext.cartList.length >0){
-        console.log(dataFromContext.cartList);
-        console.log('first if');
-        dataFromContext.cartList.splice(0,1,prodArray) ;
-        console.log(dataFromContext.cartList);
-        dataFromContext.setCartList([...dataFromContext.cartList]);
-        flag = 1;
-      } else{
       dataFromContext.setCartList([...dataFromContext.cartList,prodArray]);
-      }
     }else{
       let itemPos = dataFromContext.cartList.indexOf(Check);
       dataFromContext.cartList[itemPos].amount++ ;
