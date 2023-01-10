@@ -11,14 +11,11 @@ let flag;
   },[])
 
   const dataFromContext = useContext(MyContext);
+
   const addToCart = () =>{
-    console.log(`first row ${dataFromContext.cartList}`);
-    if (dataFromContext.cartList.length >0){dataFromContext.setCartList([{}]) }
-    let Lastid = (dataFromContext.cartList.length)+1;
-    const prodArray = {id:(Lastid+1), name:props.title, price:props.Price, amount:'1'};
-    let Check = dataFromContext.cartList.find((el) => el.name === prodArray.name);
+    const prodArray = {id:props.id, name:props.title, price:props.Price, amount:'1'};
+    let Check = dataFromContext.cartList.find((el) => el.id === prodArray.id);
    
-    
     if (Check=== undefined){
       if (flag === 0 && dataFromContext.cartList.length >0){
         console.log(dataFromContext.cartList);

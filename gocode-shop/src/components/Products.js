@@ -17,6 +17,7 @@ const Products = () => {
         dataFromContext.prodFilter.map((prop) => 
                     <Product    
                     key={prop.id}
+                    id={prop.id}
                     title={prop.title} 
                     Image={prop.image} 
                     Price={prop.price}

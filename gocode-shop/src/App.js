@@ -33,6 +33,7 @@ const App = () => {
   useEffect( ()=>{
   if (prodFilter.length > 0){
   setIsloading(false);
+  console.log(`this is prod list ${prodCat}`);
   }  
   },[prodFilter])
 
