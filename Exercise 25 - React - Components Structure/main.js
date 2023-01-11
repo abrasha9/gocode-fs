@@ -35,7 +35,7 @@ const SortBy = () =>{
     )
 }  
 
-const  Header2 = () => {
+const  FilterAndSort = () => {
     
     return (
         <div>    
@@ -84,7 +84,7 @@ const Products = () => {
 const Main2 = () => {
     return(
         <div>
-            <Header2 />
+            <FilterAndSort />
             <Products />
         </div>
     )

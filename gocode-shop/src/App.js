@@ -1,9 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
-import Header2 from './components/Header2';
-import Products from './components/Products';
-import Cart from './components/Cart'
 import {MyContext} from './MyContext';
+import {BrowserRouter, Route, Routes } from "react-router-dom"; 
+import Home from './views/Home';
+import About from './views/About';
+import TopHeader from './components/TopHeader';
+import ProductId from './views/Products/ProductId';
 
 
 
@@ -33,7 +35,6 @@ const App = () => {
   useEffect( ()=>{
   if (prodFilter.length > 0){
   setIsloading(false);
-  console.log(`this is prod list ${prodCat}`);
   }  
   },[prodFilter])
 
@@ -41,13 +42,18 @@ const App = () => {
   categories.unshift('ALL');
   
   return (
+    <BrowserRouter>
     <MyContext.Provider value = {{setProdFilter,categories,prodFilter,prodCat,isLoading,setIsloading,cartList,setCartList}}>
+    <TopHeader/>
     <div className="App2">  
-      <Header2/>
-      <Cart/>
-      <Products/> 
+    <Routes>
+      <Route path="/" element={<Home />}/>
+      <Route path="/about" element={<About />}/>
+      <Route path='/products/productId' element={<ProductId />}/>
+    </Routes>  
     </div>
     </MyContext.Provider>
+    </BrowserRouter>
   )
 }
 

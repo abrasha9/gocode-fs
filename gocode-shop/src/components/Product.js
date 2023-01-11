@@ -2,6 +2,7 @@ import React, {useContext} from "react";
 import './Product.css';
 import { MyContext } from '../MyContext';
 import { useEffect } from 'react';
+import { useNavigate } from "react-router-dom";
 
 
 const Product = (props) => {
@@ -35,10 +36,13 @@ let flag;
     
 
   }
+
+  const navigate = useNavigate();
+  const state = props.id;
     return (
         <div className="product-card">
         <div className="product-image">
-        <img src ={props.Image} alt='t'/>
+        <img src ={props.Image} alt='t' onClick={()=>{navigate('/products/productId',{state})}}/>
         </div>
         <div className="product-info">
           <h5>{props.title}</h5>
