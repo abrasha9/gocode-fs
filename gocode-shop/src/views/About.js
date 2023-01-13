@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Cart from '../components/Cart';
-import { useHref, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 
 
 

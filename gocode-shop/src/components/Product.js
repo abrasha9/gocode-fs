@@ -10,11 +10,10 @@ let flag;
   useEffect(()=>{
     flag =0;
   },[])
-
   const dataFromContext = useContext(MyContext);
 
   const addToCart = () =>{
-    const prodArray = {id:props.id, name:props.title, price:props.Price, amount:'1'};
+    const prodArray = {id:props.id, Image:props.Image, name:props.title, price:props.Price, amount:'1'};
     let Check = dataFromContext.cartList.find((el) => el.id === prodArray.id);
    
     if (Check=== undefined){
@@ -42,7 +41,7 @@ let flag;
     return (
         <div className="product-card">
         <div className="product-image">
-        <img src ={props.Image} alt='t' onClick={()=>{navigate('/products/productId',{state})}}/>
+        <img src ={props.Image} alt='t' onClick={()=>{navigate(`/products/${state}`,{state})}}/>
         </div>
         <div className="product-info">
           <h5>{props.title}</h5>

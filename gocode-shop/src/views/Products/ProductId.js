@@ -24,7 +24,7 @@ const ProductId = () => {
 
   return (
     <div className='prodId'>
-        <Cart/>
+        <Cart/>  
         <p>this is the product:</p>
         <Product
         key={localProd.id}

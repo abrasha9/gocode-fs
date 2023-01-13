@@ -9,7 +9,7 @@ const FilterBy = () =>{
     const filterChange =(cat1) =>{ 
         const temparr = dataFromContext.prodCat.filter ((el) => el.category === cat1)
         if (cat1 === 'ALL'){
-            dataFromContext.setProdFilter(dataFromContext.prodFilter)
+            dataFromContext.setProdFilter(dataFromContext.prodCat)
         }else {
             dataFromContext.setProdFilter(temparr);        
     }}

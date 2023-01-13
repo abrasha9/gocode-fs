@@ -49,7 +49,7 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Home />}/>
       <Route path="/about" element={<About />}/>
-      <Route path='/products/productId' element={<ProductId />}/>
+      <Route path='/products/:productId' element={<ProductId />}/>
     </Routes>  
     </div>
     </MyContext.Provider>
