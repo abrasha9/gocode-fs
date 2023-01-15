@@ -1,16 +1,16 @@
 import React, {useState,useEffect} from 'react'
 import Product from '../../components/Product';
-import { useLocation } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import Cart from '../../components/Cart';
 import './ProductId.css';
  
 
 const ProductId = () => {
     const [localProd,setLocalProd]=useState([]);
-    const Location = useLocation();
+    const params = useParams();
     const getProducts = async function () {
         try {
-          const response = await fetch(`https://fakestoreapi.com/products/${Location.state}`);
+          const response = await fetch(`https://fakestoreapi.com/products/${params.productId}`);
           const answer = await response.json();
           setLocalProd(answer);
         } catch (error) {

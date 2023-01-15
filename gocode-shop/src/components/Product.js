@@ -2,7 +2,8 @@ import React, {useContext} from "react";
 import './Product.css';
 import { MyContext } from '../MyContext';
 import { useEffect } from 'react';
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { Button } from '@mui/material';
 
 
 const Product = (props) => {
@@ -36,17 +37,15 @@ let flag;
 
   }
 
-  const navigate = useNavigate();
-  const state = props.id;
     return (
         <div className="product-card">
         <div className="product-image">
-        <img src ={props.Image} alt='t' onClick={()=>{navigate(`/products/${state}`,{state})}}/>
+        <Link to={`/products/${props.id}`}><img src ={props.Image} alt='t'/> </Link>
         </div>
         <div className="product-info">
           <h5>{props.title}</h5>
-          <h6>{props.Price}</h6>
-          <button className="add" onClick={addToCart}>add to cart</button>
+          <h6>{props.Price}₪</h6>
+          <Button variant="outlined" className="add" onClick={addToCart}>add to cart</Button>
         </div>
       </div>
     )
