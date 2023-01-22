@@ -4,10 +4,6 @@ import { MyContext } from "../MyContext";
 import { InputLabel, MenuItem, FormControl, Select, Box } from "@mui/material/";
 
 const FilterBy = () => {
-  const [age, setAge] = React.useState("");
-  const handleChange = (event) => {
-    setAge(event.target.value);
-  };
 
   const dataFromContext = useContext(MyContext);
 
@@ -22,7 +18,6 @@ const FilterBy = () => {
     }
   };
 
-  const labelName = "Filter By israel: ";
 
   return (
     <div className="sort">
@@ -42,17 +37,6 @@ const FilterBy = () => {
         </Select>
       </FormControl>
     </Box>
-        {/* <label>{labelName}</label>
-        <select
-          defaultValue={"ALL"}
-          onChange={(e) => filterChange(e.target.value)}
-        >
-          {dataFromContext.categories.map((option2, index) => (
-            <option key={index} value={option2}>
-              {option2}
-            </option>
-          ))}
-        </select> */}
       </div>
     </div>
   );

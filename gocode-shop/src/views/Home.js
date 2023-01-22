@@ -1,78 +1,35 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import FilterAndSort from '../components/FilterAndSort';
 import Products from '../components/Products';
-import Cart from '../components/Cart';
-// import Box from '@mui/material/Box';
+import {MyContext} from '../MyContext';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
-// import List from '@mui/material/List';
-// import Divider from '@mui/material/Divider';
-// import ListItem from '@mui/material/ListItem';
-// import ListItemButton from '@mui/material/ListItemButton';
-// import ListItemIcon from '@mui/material/ListItemIcon';
-// import ListItemText from '@mui/material/ListItemText';
-// import InboxIcon from '@mui/icons-material/MoveToInbox';
-// import MailIcon from '@mui/icons-material/Mail';
 import { MenuItem } from '@mui/material';
 
 
 
 
 const Home = () => {
-  // const [state, setState] = useState({
-  //   top: false,
-  //   left: false,
-  //   bottom: false,
-  //   right: false,
-  // })
-  // const  TemporaryDrawer=() =>{
-  //   };
+  
+  
+  const dataFromContext = useContext(MyContext);
 
 
-  // // const toggleDrawer =
-  // // (anchor,open) =>
-  // // (event: React.KeyboardEvent | React.MouseEvent) => {
-  // //   if (event.type === 'keydown' && ((event as React.KeyboardEvent).key === 'Tab' ||(event as React.KeyboardEvent).key === 'Shift')) {
-  // //     return;
-  // //   }
+  const removeItem = (id,command) =>{
+    console.log(id);
+    let position = dataFromContext.cartList.findIndex((el)=>( el.id === id))
+    if (command === 'remove'){
+      dataFromContext.cartList[position].amount--;
+    } else {
+      dataFromContext.cartList[position].amount++;
 
-  // //   setState({ ...state, [anchor]: open });
-  // // };
+    }
+  if (dataFromContext.cartList[position].amount === 0){
+    dataFromContext.cartList.splice(position,1);
+  }
+    dataFromContext.setCartList([...dataFromContext.cartList]); 
+  }
 
-  // const list = (anchor) => (
-  //   <Box
-  //     sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
-  //     role="presentation"
-  //     // onClick={toggleDrawer(anchor, false)}
-  //     // onKeyDown={toggleDrawer(anchor, false)}
-  //   >
-  //     <List>
-  //       {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-  //         <ListItem key={text} disablePadding>
-  //           <ListItemButton>
-  //             <ListItemIcon>
-  //               {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-  //             </ListItemIcon>
-  //             <ListItemText primary={text} />
-  //           </ListItemButton>
-  //         </ListItem>
-  //       ))}
-  //     </List>
-  //     <Divider />
-  //     <List>
-  //       {['All mail', 'Trash', 'Spam'].map((text, index) => (
-  //         <ListItem key={text} disablePadding>
-  //           <ListItemButton>
-  //             <ListItemIcon>
-  //               {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-  //             </ListItemIcon>
-  //             <ListItemText primary={text} />
-  //           </ListItemButton>
-  //         </ListItem>
-  //       ))}
-  //     </List>
-  //   </Box>
-  // );
 
   const [open, setOpen] = React.useState(false);
   
@@ -88,7 +45,6 @@ const Home = () => {
   return (
     <div>
         <FilterAndSort/>
-        <Cart/>
         <>
             <Button onClick={handleOpen} 
                 variant="outlined" color="success">
@@ -96,25 +52,14 @@ const Home = () => {
             </Button>
             <Drawer anchor={"right"} open={open} 
                 onClose={handleClose}>
-                <MenuItem>Geek</MenuItem>
-                <MenuItem>Geeks</MenuItem>
-                <MenuItem>GeeksForGeeks</MenuItem>
+                  {dataFromContext.cartList.map((prop) => 
+                  <MenuItem key={prop.id} id={prop.id}><img src={prop.Image} className='cartImage' alt='t'/>{prop.name} price: {(prop.price*prop.amount).toFixed(2)} ₪ amount: {prop.amount}<br></br>
+                  <button onClick={()=>removeItem(prop.id,'remove')}>-</button>
+                  <button onClick={()=>removeItem(prop.id,'add')}>+</button>
+                  <br></br></MenuItem>)}
+                 
             </Drawer>
         </>
-
-
-        {/* {(['left', 'right', 'top', 'bottom']).map((anchor) => (
-  <React.Fragment key={anchor}>
-    <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
-    <Drawer
-      anchor={anchor}
-      open={state[anchor]}
-      onClose={toggleDrawer(anchor, false)}
-    >
-      {list(anchor)}
-    </Drawer>
-  </React.Fragment>
-))} */}
         <Products/> 
 
     </div>
