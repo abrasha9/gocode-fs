@@ -35,8 +35,7 @@ const About = () => {
     <a href="http://localhost:3000/about?a=5&b=7&c=8&abcdefghi=9578324878&user=youAreTheBestUserEver">click here for queriparam</a>
     {paramArray.map((prop, index) =>
       <p key={index}>THE PARAMETER: {prop.param} VALUE is: {prop.value}</p>
-      )}
-    <Cart/>        
+      )}       
     </div>
   )
 }
