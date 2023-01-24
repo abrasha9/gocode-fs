@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Cart from '../components/Cart';
 import { useSearchParams } from 'react-router-dom';
 
 

@@ -3,7 +3,7 @@ import './Product.css';
 import { MyContext } from '../MyContext';
 import { useEffect } from 'react';
 import { Link } from "react-router-dom";
-import { Button } from '@mui/material';
+import { Button,Card,CardContent,CardActions,Typography,CardMedia } from '@mui/material';
 
 
 const Product = (props) => {
@@ -40,13 +40,34 @@ let flag;
     return (
         <div className="product-card">
         <div className="product-image">
-        <Link to={`/products/${props.id}`}><img src ={props.Image} alt='t'/> </Link>
-        </div>
+        <Card className="product-info" variant="outlined" sx={{ maxWidth: 200 }}>
+        <Link to={`/products/${props.id}`}><CardMedia className="product-image"
+        sx={{ height: 250 }}
+        image={props.Image}
+        title="green iguana"
+      /></Link>
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {props.title} 
+        </Typography>
+        <Typography gutterBottom variant="h6" component="div">
+         {props.Price}₪
+        </Typography>
+
+      </CardContent>
+      <CardActions>
+        <Button variant="outlined" className="add" onClick={addToCart}>add to cart</Button>
+
+      </CardActions>
+    </Card>
+    </div>
+
+        {/* <Link to={`/products/${props.id}`}><img src ={props.Image} alt='t'/> </Link>
         <div className="product-info">
           <h5>{props.title}</h5>
           <h6>{props.Price}₪</h6>
           <Button variant="outlined" className="add" onClick={addToCart}>add to cart</Button>
-        </div>
+        </div> */}
       </div>
     )
 }

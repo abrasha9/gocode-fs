@@ -7,15 +7,10 @@ const FilterBy = () => {
 
   const dataFromContext = useContext(MyContext);
 
+
+  //the concept of selecting filter shows only the 
   const filterChange = (cat1) => {
-    const temparr = dataFromContext.prodCat.filter(
-      (el) => el.category === cat1
-    );
-    if (cat1 === "ALL") {
-      dataFromContext.setProdFilter(dataFromContext.prodCat);
-    } else {
-      dataFromContext.setProdFilter(temparr);
-    }
+    dataFromContext.setFilterCat(cat1)
   };
 
 

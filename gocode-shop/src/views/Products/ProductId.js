@@ -1,7 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import Product from '../../components/Product';
 import { useParams } from 'react-router-dom';
-import Cart from '../../components/Cart';
 import './ProductId.css';
  
 
@@ -24,7 +23,6 @@ const ProductId = () => {
 
   return (
     <div className='prodId'>
-        <Cart/>  
         <p>this is the product:</p>
         <Product
         key={localProd.id}

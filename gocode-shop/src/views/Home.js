@@ -5,6 +5,7 @@ import {MyContext} from '../MyContext';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
 import { MenuItem } from '@mui/material';
+ 
 
 
 
@@ -41,6 +42,7 @@ const Home = () => {
       setOpen(false);
   }
 
+  const totalCart = dataFromContext.cartList.reduce((a,b) => a+(b.price*b.amount),0);
 
   return (
     <div>
@@ -53,10 +55,14 @@ const Home = () => {
             <Drawer anchor={"right"} open={open} 
                 onClose={handleClose}>
                   {dataFromContext.cartList.map((prop) => 
-                  <MenuItem key={prop.id} id={prop.id}><img src={prop.Image} className='cartImage' alt='t'/>{prop.name} price: {(prop.price*prop.amount).toFixed(2)} ₪ amount: {prop.amount}<br></br>
-                  <button onClick={()=>removeItem(prop.id,'remove')}>-</button>
-                  <button onClick={()=>removeItem(prop.id,'add')}>+</button>
+                  <MenuItem key={prop.id} id={prop.id}><img src={prop.Image} width ={'80px'} height={'80px'} alt='t'/>{prop.name} price: {(prop.price*prop.amount).toFixed(2)} ₪ amount: {prop.amount}<br></br>
+                  <Button onClick={()=>removeItem(prop.id,'remove')} 
+                  size='small' variant="contained" color="error">-</Button>
+                  <Button onClick={()=>removeItem(prop.id,'add')} 
+                  size='small' variant="contained" color="success">+</Button>
                   <br></br></MenuItem>)}
+                  <MenuItem>total: {dataFromContext.cartList.reduce((a,b) => a+(b.price*b.amount),0).toFixed(2)} ₪;
+                  </MenuItem>
                  
             </Drawer>
         </>

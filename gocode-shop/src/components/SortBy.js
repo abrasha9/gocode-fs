@@ -1,51 +1,43 @@
-import React, {useState,useContext} from "react";
+import React, {useContext} from "react";
 import Box from '@mui/material/Box';
-import Stack from '@mui/material/Stack';
 import Slider from '@mui/material/Slider';
+import { InputLabel} from "@mui/material/";
+import './FilterAndSort.css';
 import {MyContext} from '../MyContext';
-// import VolumeDown from '@mui/icons-material/VolumeDown';
-// import VolumeUp from '@mui/icons-material/VolumeUp';
 
 
 const SortBy = () => {
 
+  const dataFromContext = useContext(MyContext);
 
-    const [value, setValue] = useState(30);
 
-    const handleChange = (event, newValue) => {
-      setValue(newValue);
-    };
 
-  const options = [
-    "Featured",
-    "Best Selling",
-    "Alphabetically, A-Z",
-    "Alphabetically, Z-A",
-    "Price, low to high",
-    "Price, high to low",
-    "Date, new to old",
-    "Date,old to new",
-  ];
+  const handleChange = (event, newValue) => {
+    dataFromContext.setsliderValue(newValue);
+  };
+
   return (
     <div className="sort">
       <div className="collection-sort">
         <Box sx={{ width: 200 }}>
-          <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center">
+          {/* <Stack spacing={2} direction="row" sx={{ mb: 1 }} alignItems="center"> */}
             {/* <VolumeDown /> */}
-            <Slider aria-label="Temperature" value={value} onChange={handleChange} />
-            {/* <VolumeUp /> */}
-          </Stack>
-          {/* <Slider disabled defaultValue={30} aria-label="Disabled slider" /> */}
+        <InputLabel id="demo-simple-select-label">Price Range</InputLabel>
+            
+            <Slider className="sortSlider" 
+            getaria-label="Temperature range" 
+            value={dataFromContext.sliderValue} 
+            onChange={handleChange}
+            // valueLabelDisplay="auto"
+            min={0}
+            max={1000} 
+            marks={[
+              {value:dataFromContext.sliderValue[0],label:dataFromContext.sliderValue[0]},
+              {value:dataFromContext.sliderValue[1],label:dataFromContext.sliderValue[1]},
+          ]}
+            />
         </Box>
-        );
-        {/* <label>{labelName}</label>
-        <select>
-          {options.map((option2, index) => (
-            <option key={index} value="/">
-              {option2}
-            </option>
-          ))}
-        </select> */}
+      
       </div>
     </div>
   );
